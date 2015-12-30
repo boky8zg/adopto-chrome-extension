@@ -1,3 +1,79 @@
-<div id="adopto-logo"></div>
-<div id="profile-picture"></div>
-<h1>Hello world</h1>
+<div class="header">
+    <a href="https://adopto.eu" target="_blank">Adopto</a>
+    <button class="btn-close">
+        <i class="fa fa-times"></i>
+    </button>
+    <div class="clearfix"></div>
+</div>
+
+<form id="adopto-form">
+    <div class="form-group-title">
+        <i class="fa fa-user"></i>
+        Candidate details
+    </div>
+
+    <div class="form-group candidate-details">
+        <img class="candidate-image" alt="Candidate" />
+
+        <input type="text" name="Name" id="adopto-Name" placeholder="Name" />
+        <input type="email" name="Email" id=adopto-Email"" placeholder="E-mail" />
+        <input type="text" name="JobTitle" id="adopto-JobTitle" placeholder="Job title" />
+        <input type="text" name="Location" id="adopto-Location" placeholder="Location" />
+
+        <input type="hidden" name="SourceType" />
+        <input type="hidden" name="SourceProfileUrl" />
+        <input type="hidden" name="SourceProfileImageUrl" />
+
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="form-group-title">
+        <i class="fa fa-pencil-square-o"></i>
+        Keep it
+    </div>
+
+    <div class="form-group keep-it">
+        <div class="form-subgroup select-boxes">
+            <select name="JobId" id="JobId">
+                <option disabled selected hidden value="-1">Positions</option>
+            </select>
+
+            <select name="TalentListId" id="TalentListId">
+                <option disabled selected hidden value="-1">Talent list</option>
+            </select>
+        </div>
+
+        <div class="form-subgroup recommend">
+            <label>
+                <input type="checkbox" name="IsRecomended" />
+                        I know and recommend this candidate
+            </label>
+        </div>
+
+        <div class="form-subgroup level-of-interest">
+            <fieldset>
+                <legend>Level of interest</legend>
+                <label>
+                    <input type="radio" name="LevelOfInterest" value="3" />
+                        Very interested
+                </label>
+                <label>
+                    <input type="radio" name="LevelOfInterest" value="2" checked="checked" />
+                        Interested
+                </label>
+                <label>
+                    <input type="radio" name="LevelOfInterest" value="1" />
+                        Small interest
+                </label>
+            </fieldset>
+        </div>
+
+        <div class="form-subgroup comment">
+            <textarea rows="4" placeholder="Your comment about candidate..."></textarea>
+        </div>
+
+        <button type="submit">
+            <i class="fa fa-asterisk"></i>Source candidate
+        </button>
+    </div>
+</form>

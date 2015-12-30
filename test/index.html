@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+
+        <script src="../js/jquery.min.js"></script>
+        <script>
+            var array = [];
+            
+            $.getScript('test.js', function (data) {
+                array['Test'] = ProfileScript;
+            
+                $.getScript('test2.js', function (data) {
+                    array['Test2'] = ProfileScript;
+
+                    console.log(array['Test'].test());
+                    console.log(array['Test2'].test());
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

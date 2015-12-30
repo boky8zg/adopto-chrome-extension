@@ -10,11 +10,13 @@
         "128": "icon/icon_128.png"
     },
 
-    "author": "Bojan Došen, Adopto LTD",
+    "author": "Bojan Došen, AdoptoTech LTD",
     /* "key": "", */
     "permissions": [
         "tabs",
-        "https://*.facebook.com/*"
+        "https://adopto.eu/*",
+        "https://*.facebook.com/*",
+        "https://github.com/*"
     ],
     "content_scripts": [
         {
