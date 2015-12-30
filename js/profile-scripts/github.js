@@ -1,4 +1,4 @@
-var GitHub = {
+var ProfileScript = {
     host: [],
 
     IsProfilePageActive: function () {

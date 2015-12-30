@@ -1,4 +1,4 @@
-var AngelList = {
+var ProfileScript = {
     host: [],
 
     IsProfilePageActive: function () {

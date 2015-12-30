@@ -5,19 +5,22 @@
         <title></title>
 
         <script src="../js/jquery.min.js"></script>
+        <script src="profile-script-loader.js"></script>
         <script>
-            var array = [];
-            
-            $.getScript('test.js', function (data) {
-                array['Test'] = ProfileScript;
-            
-                $.getScript('test2.js', function (data) {
-                    array['Test2'] = ProfileScript;
+            /*var array = [];
 
-                    console.log(array['Test'].test());
-                    console.log(array['Test2'].test());
-                });
+            $.getScript('test.js', function (data) {
+            array['Test'] = ProfileScript;
+
+            $.getScript('test2.js', function (data) {
+            array['Test2'] = ProfileScript;
+
+            console.log(array['Test'].test());
+            console.log(array['Test2'].test());
             });
+            });*/
+
+            ProfileScriptLoader.LoadScripts();
         </script>
     </head>
     <body>

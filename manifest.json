@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Adopto",
-    "version": "1.0",
+    "version": "0.9",
 
     "description": "Adopto extension",
     "icons": {
@@ -10,24 +10,29 @@
         "128": "icon/icon_128.png"
     },
 
-    "author": "Bojan Došen, AdoptoTech LTD",
+    "author": "Bojan Došen, Adopto LTD",
     /* "key": "", */
     "permissions": [
         "tabs",
         "https://adopto.eu/*",
         "https://*.facebook.com/*",
-        "https://github.com/*"
+        "https://*.twitter.com/*"
     ],
     "content_scripts": [
         {
-            "matches": ["https://*.facebook.com/*"],
-            "css": ["css/sidebar.css"],
+            "matches": ["https://*.facebook.com/*", "https://*.twitter.com/*"],
+            "css": ["css/font-awesome.css", "css/sidebar.css"],
             "js": ["js/jquery.min.js"]
         }
     ],
     "web_accessible_resources" : [
+        "*.json",
+        "*.js",
         "*.png",
-        "*.html"
+        "*.html",
+        "*.eot",
+        "*.woff2",
+        "*.ttf"
     ],
 
     "background": {

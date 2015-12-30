@@ -1,10 +1,8 @@
 var ProfileScript = {
-    host: ['facebook.com', 'www.facebook.com', 'fb.com', 'www.fb.com'],
+    host: ['angellist.com'],
 
     IsProfilePageActive: function () {
-        if ($('#fbCoverImageContainer').length) {
-            return true;
-        }
+        
 
         return false;
     },
@@ -18,7 +16,7 @@ var ProfileScript = {
     },
 
     GetProfilePageUrl: function () {
-        return window.location.origin + '/' + window.location.pathname.split('/')[1] + '/about'
+        return window.localStorage.pathname.split('/')[1];
     },
 
     GetName: function () {
@@ -44,13 +42,10 @@ var ProfileScript = {
     },
 
     GetProfileImageURL: function () {
-        return $('.profilePic').attr('src');
+        
     },
 
     ButtonPlaceholder: function (button) {
-        button.appendTo('.profilePicThumb');
-        button.css({
-            
-        });
+        
     }
 }

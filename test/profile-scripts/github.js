@@ -1,10 +1,8 @@
 var ProfileScript = {
-    host: ['facebook.com', 'www.facebook.com', 'fb.com', 'www.fb.com'],
+    host: ['github.com'],
 
     IsProfilePageActive: function () {
-        if ($('#fbCoverImageContainer').length) {
-            return true;
-        }
+        
 
         return false;
     },
@@ -18,7 +16,7 @@ var ProfileScript = {
     },
 
     GetProfilePageUrl: function () {
-        return window.location.origin + '/' + window.location.pathname.split('/')[1] + '/about'
+        return window.localStorage.pathname.split('/')[1];
     },
 
     GetName: function () {
@@ -48,9 +46,6 @@ var ProfileScript = {
     },
 
     ButtonPlaceholder: function (button) {
-        button.appendTo('.profilePicThumb');
-        button.css({
-            
-        });
+        
     }
 }

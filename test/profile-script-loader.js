@@ -1,6 +1,6 @@
 var ProfileScriptLoader = {
-    jsonPath: chrome.extension.getURL('../profile-scripts.json'),
-    profileScriptsPath: 'js/profile-scripts/',
+    jsonPath: '../profile-scripts.json',
+    profileScriptsPath: 'profile-scripts/',
     profileScripts: undefined,
     classes: [],
 
@@ -9,11 +9,7 @@ var ProfileScriptLoader = {
             ProfileScriptLoader.profileScripts = data;
 
             $.when.apply($, $.map(ProfileScriptLoader.profileScripts, function (profileScript) {
-                return $.ajax({
-                    dataType: 'script',
-                    url: chrome.extension.getURL(ProfileScriptLoader.profileScriptsPath + profileScript.file)
-                }).done(function (data, textStatus, jqxhr) {
-                    console.log(data, textStatus, jqxhr);
+                return $.getScript(ProfileScriptLoader.profileScriptsPath + profileScript.file).done(function (data) {
                     ProfileScriptLoader.classes[profileScript.class] = ProfileScript;
                 });
             })).done(function () {
