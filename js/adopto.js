@@ -1,3 +1,5 @@
+console.log('Test');
+
 if ($('.adopto-sidebar').length) {
     if ($('.adopto-sidebar').css('right') == '0px') {
         HideSidebar();
@@ -18,8 +20,6 @@ function AfterSidebarRender() {
     });
 
     $('#adopto-form').bind('submit', function (e) {
-        alert('123123123');
-
         var formData = $('.adopto-sidebar #adopto-form').serialize();
 
         $.post(

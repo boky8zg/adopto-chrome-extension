@@ -68,9 +68,10 @@
 
 .adopto-sidebar .form-group-title {
     padding: 10px 15px;
-    background-color: #2d353c;
-    color: #ffffff;
-    font-size: 12px;
+    /*background-color: #2d353c;*/
+    background-color: #DCDCDC;
+    color: #000;
+    font-size: 14px;
     font-weight: 500;
 }
 
