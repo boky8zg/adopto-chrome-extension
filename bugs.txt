@@ -1,0 +1,2 @@
+Spora ajax provjera login statusa korisnika.
+Na LinkedIn-u z-index sidebara nije odgovarajući.

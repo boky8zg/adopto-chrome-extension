@@ -16,13 +16,13 @@
         <img class="candidate-image" alt="Candidate" />
 
         <input type="text" name="Name" id="adopto-Name" placeholder="Name" />
-        <input type="email" name="Email" id=adopto-Email"" placeholder="E-mail" />
+        <input type="email" name="Email" id="adopto-Email" placeholder="E-mail" />
         <input type="text" name="JobTitle" id="adopto-JobTitle" placeholder="Job title" />
         <input type="text" name="Location" id="adopto-Location" placeholder="Location" />
 
-        <input type="hidden" name="SourceType" />
-        <input type="hidden" name="SourceProfileUrl" />
-        <input type="hidden" name="SourceProfileImageUrl" />
+        <input type="hidden" name="SourceType" id="adopto-SourceType" />
+        <input type="hidden" name="SourceProfileUrl" id="adopto-SourceProfileUrl" />
+        <input type="hidden" name="SourceProfileImageUrl" id="adopto-SourceProfileImageUrl" />
 
         <div class="clearfix"></div>
     </div>
@@ -72,7 +72,7 @@
             <textarea rows="4" placeholder="Your comment about candidate..."></textarea>
         </div>
 
-        <button type="submit">
+        <button type="submit" id="adopto-submit">
             <i class="fa fa-asterisk"></i>Source candidate
         </button>
     </div>

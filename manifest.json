@@ -13,15 +13,23 @@
     "author": "Bojan Došen, Adopto LTD",
     "permissions": [
         "tabs",
-        "https://adopto.eu/*",
+        "https://*.adopto.eu/*",
+
         "https://*.facebook.com/*",
+        "https://*.fb.com/*",
+        "https://*.linkedin.com/*",
         "https://*.twitter.com/*"
     ],
     "content_scripts": [
         {
-            "matches": ["https://*.facebook.com/*", "https://*.twitter.com/*"],
+            "matches": [
+                "https://*.facebook.com/*",
+                "https://*.fb.com/*",
+                "https://*.linkedin.com/*",
+                "https://*.twitter.com/*"
+            ],
             "css": ["css/font-awesome.css", "css/sidebar.css"],
-            "js": ["js/jquery.min.js"]
+            "js": ["js/jquery.min.js", "js/profile-scripts.js", "js/adopto.js"]
         }
     ],
     "web_accessible_resources" : [
