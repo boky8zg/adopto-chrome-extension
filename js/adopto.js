@@ -12,6 +12,10 @@ var pluginHtml = {
         url: 'html/not-logged.html',
         data: ''
     },
+    notSwitched: {
+        url: 'html/not-switched.html',
+        data: ''
+    },
     openProfile: {
         url: 'html/open-profile.html',
         data: ''
@@ -73,6 +77,8 @@ function ShowSidebar() {
                 } else {
                     RenderOpenProfile();
                 }
+            } else if (userData.IsAuthenticated && !userData.RecruiterAccount) {
+                RenderNotSwitched();
             } else {
                 RenderNotLogged();
             }
@@ -131,6 +137,29 @@ function RenderSidebar(id) {
     for (var i = 0; i < userData.TalentList.length; i++) {
         $('.adopto-sidebar #TalentListId').append('<option value="' + userData.TalentList[i].Id + '">' + userData.TalentList[i].Text + '</option>');
     }
+
+    /* Submit event */
+    $('#adopto-form').on('submit', function (e) {
+        var formData = $('.adopto-sidebar #adopto-form').serialize();
+
+        $('.adopto-loading').fadeIn();
+
+        $.post(
+            'https://adopto.eu/Browser/Save',
+            formData
+        ).done(function (data) {
+            if (data == true) {
+                $('.adopto-loading').fadeOut();
+                $('#adopto-submit').html('<i class="fa fa-check"></i>Sourced');
+                $('#adopto-submit').prop('disabled', true);
+
+                setTimeout(HideSidebar, 2000);
+            }
+        });
+
+        e.preventDefault();
+        return false;
+    });
 }
 
 function RenderOpenProfile() {
@@ -139,6 +168,10 @@ function RenderOpenProfile() {
 
 function RenderNotLogged() {
     $('.adopto-sidebar').html(pluginHtml.notLogged.data);
+}
+
+function RenderNotSwitched() {
+    $('.adopto-sidebar').html(pluginHtml.notSwitched.data);
 }
 
 /* Detect content script by host name */
@@ -157,18 +190,6 @@ function DetectScript() {
 /* Button actions */
 $('.adopto-sidebar').on('click', '.btn-close', function () {
     HideSidebar();
-});
-
-$('#adopto-form').on('click', '#adopto-submit', function (e) {
-    var formData = $('.adopto-sidebar #adopto-form').serialize();
-
-    $.post(
-        'https://adopto.eu/Browser/Save',
-        formData
-    );
-
-    e.preventDefault();
-    return false;
 });
 
 // Old:

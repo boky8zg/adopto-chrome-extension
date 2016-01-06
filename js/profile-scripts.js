@@ -101,7 +101,52 @@ var ps = [
 
         ButtonPlaceholder: function (button) {
         }
-    }
+    },
+    {
+        name: 'Twitter',
+        sourceType: 1,
+        hosts: ['twitter.com', 'www.twitter.com'],
+
+        IsProfilePageActive: function () {
+            if ($('.ProfileHeaderCard-nameLink').length) {
+                return true;
+            }
+
+            return false;
+        },
+
+        IsProfileMoreInfoActive: function () {
+            return false;
+        },
+
+        GetProfilePageUrl: function () {
+            return $('.ProfileHeaderCard-screennameLink').attr('href');
+        },
+
+        GetName: function () {
+            return $('.ProfileHeaderCard-nameLink').text();
+        },
+
+        GetEmail: function () {
+            return '';
+        },
+
+        GetJobTitle: function () {
+            return '';
+        },
+
+        GetLocation: function () {
+            return $('.ProfileHeaderCard-locationText').text();
+        },
+
+        GetProfileImageURL: function () {
+            return $('.ProfileAvatar-image').attr('src');
+        },
+
+        ButtonPlaceholder: function (button) {
+
+        }
+    },
 ]
 
 /* Template:
