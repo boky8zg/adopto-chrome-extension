@@ -114,7 +114,11 @@ function RenderSidebar(id) {
     $('.adopto-sidebar #adopto-SourceProfileImageUrl').val(ps[id].GetProfileImageURL());
 
     /* Render profile picture */
-    $('.adopto-sidebar .candidate-image').attr('src', ps[id].GetProfileImageURL());
+    if (ps[id].GetProfileImageURL()) {
+        $('.adopto-sidebar .candidate-image').attr('src', ps[id].GetProfileImageURL());
+    } else {
+        $('.adopto-sidebar .candidate-image').attr('src', chrome.extension.getURL('img/default-avatar.png'));
+    }
 
     /* Render name */
     $('.adopto-sidebar #adopto-Name').val(ps[id].GetName());
