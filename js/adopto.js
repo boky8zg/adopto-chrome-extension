@@ -192,6 +192,10 @@ $('.adopto-sidebar').on('click', '.btn-close', function () {
     HideSidebar();
 });
 
+$('.adopto-sidebar').on('click', '#linkNotLogged', function () {
+    HideSidebar();
+});
+
 // Old:
 /*
 if ($('.adopto-sidebar').length) {

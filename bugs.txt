@@ -1,2 +1,3 @@
-Spora ajax provjera login statusa korisnika.
-Na LinkedIn-u z-index sidebara nije odgovarajući.
+  Spora ajax provjera login statusa korisnika.
++ Na LinkedIn-u z-index sidebara nije odgovarajući.
+  Dodati scrolbar
