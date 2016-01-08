@@ -19,6 +19,10 @@ var pluginHtml = {
     openProfile: {
         url: 'html/open-profile.html',
         data: ''
+    },
+    ajaxFail: {
+        url: 'html/ajax-fail.html',
+        data: ''
     }
 };
 
@@ -159,11 +163,17 @@ function RenderSidebar(id) {
 
                 setTimeout(HideSidebar, 2000);
             }
+        }).fail(function () {
+            RenderAjaxFail();
         });
 
         e.preventDefault();
         return false;
     });
+}
+
+function RenderAjaxFail() {
+    $('.adopto-sidebar').html(pluginHtml.ajaxFail.data);
 }
 
 function RenderOpenProfile() {
